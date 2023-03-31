@@ -174,7 +174,7 @@ namespace WpfApp1
             }
         }
 
-        private void Button_Click(object s, RoutedEventArgs e) //funkcja do zaimplementowania
+        private void Button_Click(object s, RoutedEventArgs e) //funkcja do zaimplementowania w bliskiej przyszłości
         {   
             //podzial na 2 osobne okna nad którymi mozna pracowac
             okno.Visibility=Visibility.Hidden;
