@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.ustawienia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ustawienia" Height="450" Width="318">
+    <Grid>
+        <RadioButton Content="Niebieski" HorizontalAlignment="Left" Margin="54,42,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton Content="Biały" HorizontalAlignment="Left" Margin="54,79,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+        <RadioButton Content="Szary" HorizontalAlignment="Left" Margin="54,119,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_2"/>
+        <RadioButton Content="Zielony" HorizontalAlignment="Left" Margin="54,156,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_3"/>
+        <Button Content="Zapisz" HorizontalAlignment="Left" Height="26" Margin="54,191,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click"/>
+
+    </Grid>
+</Window>

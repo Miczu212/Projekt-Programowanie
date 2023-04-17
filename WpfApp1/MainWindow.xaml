@@ -30,8 +30,6 @@
                 <MenuItem Header="Nowy2" Click="Nowy2" Visibility="Hidden" Name="nowy2"/>
             </MenuItem>
             <MenuItem Header="Ustawienia" Height="26" Width="65" Click="MenuItem_Click">
-                <MenuItem Header="styl"  />
-                    <MenuItem Header="czerwony"  />
             </MenuItem>
         </Menu>
         <Label  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Name="czaslabel" Height="26" Width="96" Grid.Column="1" />

@@ -20,7 +20,8 @@ namespace WpfApp1
 {
 
     public partial class MainWindow : Window
-    {
+    {   
+        int wybor;
         string sciezka,sciezka2;
 
         bool pierwszyraz = false,podzial=false;
@@ -61,9 +62,12 @@ namespace WpfApp1
         }
         public MainWindow()
         {
+           
             InitializeComponent();
+            stylloader();
             Loaded += czasrozpoczecia;
         }
+        
         private Stopwatch stopwatch;
         private DispatcherTimer timer;
         private void czasrozpoczecia(object s, RoutedEventArgs e) // ta funkcja jest wywoływana podczas startu programu
@@ -75,7 +79,28 @@ namespace WpfApp1
             timer.Tick += zegar;
             timer.Start();
         }
-
+        public void stylloader()
+        {
+            string projekt = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+            var text = File.ReadAllText(projekt + "/config.txt");
+            wybor = int.Parse(text);
+            if (wybor == 4)
+            {
+                grid.Background = new SolidColorBrush(Colors.LightBlue);
+            }
+            else if (wybor == 3)
+            {
+                grid.Background = new SolidColorBrush(Colors.White);
+            }
+            else if (wybor == 2)
+            {
+                grid.Background = new SolidColorBrush(Colors.Gray);
+            }
+            else if (wybor == 1)
+            {
+                grid.Background = new SolidColorBrush(Colors.Green);
+            }
+        }
         private void zegar(object s, EventArgs e)
         {
             TimeSpan czas = stopwatch.Elapsed;
@@ -202,10 +227,15 @@ namespace WpfApp1
                 }
             }
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void proxystyl(object s,EventArgs e)
         {
-            //Musze dodac okno które wyskakuje w którym mozna zmienic styl aplikacji
+            stylloader();
+        }
+        private void MenuItem_Click(object s, RoutedEventArgs e)
+        {
+            ustawienia ust = new ustawienia();
+            ust.Show();
+            ust.Closed +=proxystyl;
         }
 
         private void Nowy(object s, RoutedEventArgs e) // Funkcja która pozwoli stworzyc nowy plik, trzeba jednak wpierw wybrac folder w którym się zapisze i nazwe
