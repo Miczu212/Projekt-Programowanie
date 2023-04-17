@@ -6,7 +6,7 @@
         Loaded="czasrozpoczecia"
         Closing="sprawdzenie"
         SizeChanged="skalowane">
-    <Grid Background="LightBlue">
+    <Grid Background="LightBlue" Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="27*" />
@@ -21,20 +21,24 @@
                  Name="okno" Grid.Row="1" Grid.ColumnSpan="2"/>
         <Menu Grid.Row="0" Margin="0,0,13,7" HorizontalAlignment="Stretch">
             <MenuItem Header="Plik" Height="26">
-                <MenuItem Header="Nowy" Click="Nowy" />
-                <MenuItem Header="Otwórz" Click="wybierzplik" />
-                <MenuItem Header="Otwórz 2" Click="wybierzplik" />
                 <MenuItem Header="Zapisz" Name="Zapisz" Click="Zapis" Visibility="Hidden"/>
                 <MenuItem Header="Zapisz Jako" Name="Zapisz_Jako" Click="Zapisjako" Visibility="Hidden"/>
-                <MenuItem Header="Zapisz Jako 2" Name="Zapisz_Jako" Click="Zapisjako" Visibility="Hidden"/>
+                <MenuItem Header="Nowy" Click="Nowy" />
+                <MenuItem Header="Otwórz" Click="wybierzplik" />
+                <MenuItem Header="Otwórz 2" Click="wybierzplik2" Visibility="Hidden" Name="otworz2" />
+                <MenuItem Header="Zapisz Jako_2" Name="Zapisz_Jako_2" Click="Zapisjako2" Visibility="Hidden"/>
+                <MenuItem Header="Nowy2" Click="Nowy2" Visibility="Hidden" Name="nowy2"/>
             </MenuItem>
-            <MenuItem Header="Ustawienia" Height="26" Width="65">
+            <MenuItem Header="Ustawienia" Height="26" Width="65" Click="MenuItem_Click">
+                <MenuItem Header="styl"  />
+                    <MenuItem Header="czerwony"  />
             </MenuItem>
         </Menu>
         <Label  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Name="czaslabel" Height="26" Width="96" Grid.Column="1" />
         <TextBlock Name="start"  Grid.Column="1" HorizontalAlignment="Left" Margin="40,128,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="255" Width="404" FontSize="48" TextAlignment="Center"><Run Language="pl-pl" Text="Na razie nic nie otworzyłeś"/></TextBlock>
-        <Button Grid.Column="1" Content="Podziel" HorizontalAlignment="Left" Margin="617,30,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Click="Button_Click"/>
+        <Button Grid.Column="1" Content="Podziel" HorizontalAlignment="Left" Margin="617,10,0,3" Click="Podziel" Name="podziel" Visibility="Hidden" RenderTransformOrigin="0.406,-0.95"/>
         <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="426" Margin="25,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="375" Name="temp1" Visibility="Hidden"/>
         <TextBox HorizontalAlignment="Left" Height="426" Margin="284,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="375" Grid.Column="1" Name="temp2" Visibility="Hidden"/>
+        <TextBlock Visibility="Hidden" Name="tempo2" FontSize="48" Grid.Column="1" HorizontalAlignment="Left" Height="265" Margin="375,32,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"><Run Text="Nic nie otworzyłeś w "/><Run Language="pl-pl" Text="tym "/><Run Text="polu tekstowym"/></TextBlock>
     </Grid>
 </Window>
