@@ -55,7 +55,7 @@ namespace WpfApp1
         {
             string path1 = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + "/config.txt";
             File.WriteAllText(path1,wybor);
-            MessageBox.Show("Pomyslnie zapisano");
+            MessageBox.Show("Pomyslnie zapisano, Załaduje się po wyłączeniu okna ustawienia");
         }
     }
 }
